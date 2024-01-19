@@ -1,8 +1,8 @@
 const fs = require('fs')
 const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
 
-let arr1 = input.slice(0, 3).map(row => row.split(' ').map(Number))
-let arr2 = input.slice(4).map(row => row.split(' ').map(Number))
+let arr1 = input.slice(0, 3).map(row => row.trim().split(' ').map(Number))
+let arr2 = input.slice(4).map(row => row.trim().split(' ').map(Number))
 
 const result = []
 
