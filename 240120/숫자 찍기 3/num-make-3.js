@@ -14,11 +14,12 @@ for (let i = 0; i < n; i++) {
         }
     }
 }
-const arr = result.reverse()
 
 if (type === 1) {
     result.forEach(row => console.log(row.join(' ')))
 } else if (type === 2) {
+    const arr = result.reverse()
+    
     arr.forEach((row, i) => {
         console.log(' '.repeat(i) + row.join(' ') + ' '.repeat(i))
     })
