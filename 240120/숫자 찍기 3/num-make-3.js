@@ -19,11 +19,12 @@ if (type === 1) {
     result.forEach(row => console.log(row.join(' ')))
 } else if (type === 2) {
     const arr = result.reverse()
-    
+
     arr.forEach((row, i) => {
         console.log(' '.repeat(i) + row.join(' ') + ' '.repeat(i))
     })
 } else if (type === 3) {
+    const arr = result.reverse()
     const newArr = []
 
     for (let i = 0; i < arr.length; i++) {
