@@ -10,4 +10,4 @@ for (let i = 0; i < octal.length; i++) {
     binary += binaryDigit;
 }
 
-console.log(binary.startsWith('0') ? binary.slice(1) : binary)
+console.log(Number(binary))
