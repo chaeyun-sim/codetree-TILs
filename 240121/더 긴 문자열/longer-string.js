@@ -5,4 +5,8 @@ const obj = {}
 input[0].split(' ').map(el => obj[el.length] = el)
 
 const str = Math.max(...Object.keys(obj))
-console.log(`${obj[str]} ${str}`)
+if (Object.keys(obj).length === 1) {
+    console.log('same')
+} else {
+    console.log(`${obj[str]} ${str}`)
+}
