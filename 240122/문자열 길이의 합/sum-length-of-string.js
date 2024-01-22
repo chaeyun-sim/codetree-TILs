@@ -7,7 +7,7 @@ let total = 0;
 let sum = 0;
 
 arr.forEach(str => {
-    sum += str.split("").filter(el => el === 'a').length
+    sum += +(str[0] === 'a')
     total += str.length
 })
 
