@@ -1,4 +1,4 @@
 const a = 3
-const b = 4
+const b = 3
 console.log(`${a} ${b}`)
 console.log(a * b)
