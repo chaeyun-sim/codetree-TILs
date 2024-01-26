@@ -6,7 +6,7 @@ let i = 1;
 
 while (true) {
     if (n <= 1) break;
-    n /= i
+    n = Math.floor(n / i)
     i++
 }
 
