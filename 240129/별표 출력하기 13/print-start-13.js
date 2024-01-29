@@ -2,23 +2,17 @@ const fs = require('fs');
 const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
 
 const n = Number(input[0])
+let cnt = 0;
+let min = 1;
+let max = n;
 
-for (let i = n; i > 1; i--) {
-    if (i === n) {
-        console.log('*'.repeat(i).split('').join(' '))
-        if (n > 1) console.log('*')
+while (cnt < n * 2) {
+    if (cnt % 2 === 0) {
+        console.log('*'.repeat(max).split("").join(' '))
+        max--
     } else {
-        console.log('*'.repeat(i).split('').join(' '))
+        console.log('*'.repeat(min).split('').join(' '))
+        min++
     }
-}
-
-for (let i = 2; i <= n; i++) {
-    if (i === n) {
-        if (n > 1) {
-            console.log('*')
-        }
-        console.log('*'.repeat(i).split('').join(' '))
-    } else {
-        console.log('*'.repeat(i).split('').join(' '))
-    }
+    cnt++
 }
