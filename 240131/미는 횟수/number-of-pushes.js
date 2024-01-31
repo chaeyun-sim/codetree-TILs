@@ -5,7 +5,7 @@ let [a, b] = input;
 let i = 0;
 
 while (a !== b && i < a.length) {
-    a = a.slice(1) + a[0]
+    a = a[a.length - 1] + a.slice(0, a.length - 1)
     i++
 }
 
