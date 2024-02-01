@@ -1,20 +1,48 @@
 const fs = require("fs")
 const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
 
-const [year, month, date] = input[0].split(' ').map(Number);
-const isLeap = year % 4 === 0 || (year % 100 === 0 && year % 400 === 0)
-const season = {
-    Spring: [3, 4, 5],
-    Summer: [6, 7, 8],
-    Autumn: [9, 10, 11],
-    Winter: [1, 2, 12]
+function isLeapYear(year) {
+    if (year % 4 !== 0) {
+        return false;
+    } else if (year % 100 !== 0) {
+        return true;
+    } else if (year % 400 !== 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
-if (isLeap && month === 2 && date === 29) {
-    console.log('Winter')
-} else if (!isLeap && date < 29) {
-    const thisSeason = Object.keys(season).filter(el => season[el].includes(month))
-    console.log(thisSeason)
-} else {
-    console.log(-1)
+function getSeason(month) {
+    if (month >= 3 && month <= 5) {
+        return 'Spring';
+    } else if (month >= 6 && month <= 8) {
+        return 'Summer';
+    } else if (month >= 9 && month <= 11) {
+        return 'Fall';
+    } else {
+        return 'Winter';
+    }
 }
+
+function validateDate(Y, M, D) {
+    if (M < 1 || M > 12 || D < 1) {
+        return -1;
+    }
+
+    if (M === 2) {
+        if (isLeapYear(Y) && D > 29) {
+            return -1;
+        } else if (!isLeapYear(Y) && D > 28) {
+            return -1;
+        }
+    } else if ((M === 4 || M === 6 || M === 9 || M === 11) && D > 30) {
+        return -1;
+    } else if (D > 31) {
+        return -1;
+    }
+
+    return getSeason(M);
+}
+
+console.log(validateDate(...input[0].split(' ').map(Number)))
