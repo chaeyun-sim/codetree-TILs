@@ -3,14 +3,21 @@ const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
 
 let [n, m] = input[0].split(' ').map(Number)
 const A = input[1].split(' ').map(Number)
-let sum = m
 
-while (m !== 1) {
-    if (m % 2) {
-        m--
-    } else {
-        m /= 2
+function calculateSum(n, m, A) {
+    let sum = A[m - 1];
+    
+    while (m !== 1) {
+        if (m % 2) {
+            m--;
+        } else {
+            m /= 2;
+        }
+        sum += A[m - 1];
     }
-    sum += A[m]
+    
+    return sum;
 }
-console.log(sum)
+
+const result = calculateSum(n, m, A);
+console.log(result);
