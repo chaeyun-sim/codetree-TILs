@@ -1,27 +1,23 @@
-const fs = require('fs')
-const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
-
-const n = Number(input[0])
-let cnt = n;
-const arr1 = []
-const arr2 = []
-
-function add(cnt) {
-  if (cnt === 0) return;
-
-  arr1.push(cnt)
-  add(cnt - 1);
+function printNumbersForward(n) {
+  if (n === 1) {
+    return "1";
+  }
+  return printNumbersForward(n - 1) + " " + n;
 }
 
-function minus(cnt) {
-  if (cnt > n) return;
-
-  arr2.push(cnt)
-  minus(cnt + 1);
+function printNumbersBackward(n) {
+  if (n === 1) {
+    return "1";
+  }
+  return n + " " + printNumbersBackward(n - 1);
 }
 
-add(cnt);
-minus(1)
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const n = Number(input[0]);
 
-console.log(arr1.join(' '))
-console.log(arr2.join(" "))
+const forwardNumbers = printNumbersForward(n);
+const backwardNumbers = printNumbersBackward(n);
+
+console.log(forwardNumbers);
+console.log(backwardNumbers);
