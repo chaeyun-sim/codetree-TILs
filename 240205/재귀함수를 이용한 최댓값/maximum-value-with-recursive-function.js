@@ -2,16 +2,12 @@ const fs = require('fs')
 const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
 
 const arr = input[1].split(' ').map(Number)
-let max = arr[0]
 
-function getMax (cnt) {
-    if (cnt === arr.length - 1) return max;
+function getMax(index, currentMax) {
+    if (index >= arr.length) return currentMax;
 
-    if (arr[cnt] > max) {
-        max = arr[cnt]
-    }
-
-    return getMax(cnt + 1)
+    const newMax = arr[index] > currentMax ? arr[index] : currentMax
+    return getMax(index + 1, newMax);
 }
 
-console.log(getMax(1))
+console.log(getMax(0, arr[0]))
