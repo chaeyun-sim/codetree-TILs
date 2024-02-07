@@ -1,9 +1,16 @@
-const fs = require('fs')
-const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-const arr1 = input[1].split(' ').map(Number)
-const arr2 = input[2].split(' ').map(Number)
-arr1.sort((a, b) => a - b)
-arr2.sort((a, b) => a - b)
+const n = parseInt(input[0]);
+const arr1 = input[1].split(' ').map(Number).sort((a, b) => a - b);
+const arr2 = input[2].split(' ').map(Number).sort((a, b) => a - b);
 
-console.log(arr1.join('') === arr2.join('') ? 'Yes' : 'No')
+let isEqual = true;
+for (let i = 0; i < n; i++) {
+  if (arr1[i] !== arr2[i]) {
+    isEqual = false;
+    break;
+  }
+}
+
+console.log(isEqual ? 'Yes' : 'No');
