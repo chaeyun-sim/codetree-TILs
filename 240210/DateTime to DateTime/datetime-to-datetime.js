@@ -6,4 +6,4 @@ let [a, b, c] = input[0].split(' ').map(Number)
 let startMinutes = d * 24 * 60 + h * 60 + m;
 let endMinutes = a * 24 * 60 + b * 60 + c;
 
-console.log(endMinutes - startMinutes > 0 ? endMinutes - startMinutes : -1)
+console.log(endMinutes - startMinutes >= 0 ? endMinutes - startMinutes : -1)
