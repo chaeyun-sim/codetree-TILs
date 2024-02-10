@@ -4,15 +4,17 @@ const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
 let [a, b, c, d] = input[0].split(' ').map(Number)
 let min = 0
 
-while (a !== c && b !== d) {
-    if (a < c) {
-        min += 60
-        a++
+while (true) {
+    if (a === c && b === d) {
+        break;
     }
 
-    if (a === c && b > d) {
-        min -= b - d
-        b = d
+    min++
+    b++
+
+    if (b === 60) {
+        a++
+        b = 0
     }
 }
 
