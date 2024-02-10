@@ -10,11 +10,11 @@ const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 const calculateDays = (m, d) => {
     let totalDays = 0
 
-    for (let i = 1; i <= m; i++) {
+    for (let i = 1; i < m; i++) {
         totalDays += daysByMonth[m]
     }
 
-    return totalDays - d
+    return totalDays + d
 }
 
 const date = calculateDays(m2, d2) - calculateDays(m1, d1)
@@ -25,5 +25,5 @@ let targetDayIndex = days.indexOf(target);
 let diff = targetDayIndex - startDayIndex;
 if (diff < 0) diff += 7;
 
-const count = Math.ceil((date - diff) / 7) + 1;
+const count = Math.floor((date - diff) / 7) + 1;
 console.log(count)
