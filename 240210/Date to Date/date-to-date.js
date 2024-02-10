@@ -12,8 +12,7 @@ function solution () {
     }
 
     while (true) {
-        if (m1 === m2 && d1 === d2) {
-            console.log(total + 2)
+        if (m1 === m2 && d1 === d2) {         
             break;
         }
 
@@ -25,6 +24,8 @@ function solution () {
             d1 = 1
         }
     }
+
+    return console.log(total + 2)
 }
 
 solution()
