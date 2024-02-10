@@ -11,7 +11,7 @@ while (true) {
     d1++
     total++
 
-    if (d1 === days[m1]) {
+    if (d1 > days[m1]) {
         m1++
         d1 = 1
     }
