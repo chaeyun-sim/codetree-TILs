@@ -6,7 +6,9 @@ let [m1, d1, m2, d2] = input[0].split(' ').map(Number)
 let total = 0
 
 while (true) {
-    if (m1 === m2 && d1 === d2) break;
+    if (m1 === m2 && d1 === d2) {
+        break;
+    }
 
     d1++
     total++
@@ -17,4 +19,8 @@ while (true) {
     }
 }
 
-console.log(total + 2)
+if (m1 === m2 && d1 === d2) {
+    console.log(1)
+} else {
+    console.log(total + 2)
+}
