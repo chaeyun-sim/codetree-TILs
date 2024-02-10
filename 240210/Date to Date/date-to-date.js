@@ -25,7 +25,7 @@ function solution () {
         }
     }
 
-    return console.log(total + 2)
+    return console.log(total + 1)
 }
 
 solution()
