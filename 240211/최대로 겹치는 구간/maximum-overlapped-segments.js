@@ -7,13 +7,9 @@ const max = Math.max(...testCases.flat())
 const arr = Array(max - min + 1).fill(0)
 
 testCases.forEach(item => {
-    for (let i = item[0]; i < item[1] - 1; i++) {
-        if (arr[i]) {
-            arr[i]++
-        } else {
-            arr[i] = 1
-        }
+    for (let i = item[0]; i < item[1]; i++) {
+        arr[i - min]++;
     }
-})
+});
 
 console.log(Math.max(...arr))
