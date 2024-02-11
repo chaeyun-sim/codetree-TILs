@@ -13,7 +13,6 @@ testCases.forEach(item => {
         } else {
             arr[i] = 1
         }
-        console.log(arr)
     }
 })
 
