@@ -16,4 +16,4 @@ for (let i = 1; i < arr.length; i++) {
     }
 }
 
-console.log(max)
+console.log(arr.length === 1 ? 1 : max)
