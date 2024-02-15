@@ -17,3 +17,7 @@ for (let i = 0; i < students.length; i++) {
         return;
     }
 }
+
+if (Object.values(obj).filter(el => el >= 3).length === 0) {
+    console.log(-1)
+}
