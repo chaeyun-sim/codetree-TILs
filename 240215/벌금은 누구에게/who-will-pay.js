@@ -18,6 +18,6 @@ for (let i = 0; i < students.length; i++) {
     }
 }
 
-if (Object.values(obj).filter(el => el >= 3).length === 0) {
+if (Object.values(obj).filter(el => el >= k).length === 0) {
     console.log(-1)
 }
