@@ -1,22 +1,20 @@
-const fs = require('fs')
-const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-const dx = [1, -1, 0, 0]
-const dy = [0, 0, -1, 1]
+const dx = [0, 1, 0, -1];
+const dy = [1, 0, -1, 0];
 let x = 0, y = 0;
-let currentDirection = 3   //'E', 'W', 'S', 'N'
+let currentDirection = 0;
 
 for (let i = 0; i < input[0].length; i++) {
     if (input[0][i] === 'L') {
-        currentDirection -= 2
-        currentDirection = currentDirection > 3 ? currentDirection - 4 : currentDirection
+        currentDirection = (currentDirection + 3) % 4;
     } else if (input[0][i] === 'R') {
-        currentDirection += 2
-        currentDirection = currentDirection < 0 ? currentDirection + 4 : currentDirection
+        currentDirection = (currentDirection + 1) % 4;
     } else if (input[0][i] === 'F') {
-        x += dx[currentDirection]
-        y += dy[currentDirection]
+        x += dx[currentDirection];
+        y += dy[currentDirection];
     }
 }
 
-console.log(x, y)
+console.log(x, y);
