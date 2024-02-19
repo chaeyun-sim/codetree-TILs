@@ -4,11 +4,11 @@
 24년 02월 11일 목표(140px)까지 30px 남았습니다.
 
 ![110xp](https://img.shields.io/badge/EXP-110xp-%235cb85c.svg?for-the-badge)
-![14일째](https://img.shields.io/badge/연속학습-14일째-%23E34F26.svg?for-the-badge)
+![0일째](https://img.shields.io/badge/연속학습-0일째-%23E34F26.svg?for-the-badge)
 
 |총 문제수|획득 경험치|연속 학습|
 |---:|---:|---|
-7|110xp|14일째🔥|
+7|110xp|0일째❄️|
 
 |교재|이름|난이도|상태|최근 제출 코드|
 |---|---|:---:|:---:|---|
@@ -18,7 +18,7 @@
 |[Novice Mid / 시뮬레이션 I / 구간 칠하기](https://www.codetree.ai/missions?missionId=5)|[[개념]블럭쌓는 명령2](https://www.codetree.ai/missions/5/problems/block-stacking-commands2)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/chaeyun-sim/codetree-TILs/blob/main/240211/%EB%B8%94%EB%9F%AD%EC%8C%93%EB%8A%94%20%EB%AA%85%EB%A0%B92/block-stacking-commands2.js)|
 |[Novice Mid / 시뮬레이션 I / 구간 칠하기](https://www.codetree.ai/missions?missionId=5)|[[개념]최대로 겹치는 구간](https://www.codetree.ai/missions/5/problems/maximum-overlapped-segments)|![보통][medium]|![Passed][passed]|[링크](https://github.com/chaeyun-sim/codetree-TILs/blob/main/240211/%EC%B5%9C%EB%8C%80%EB%A1%9C%20%EA%B2%B9%EC%B9%98%EB%8A%94%20%EA%B5%AC%EA%B0%84/maximum-overlapped-segments.js)|
 |[Novice Mid / 시뮬레이션 I / 구간 칠하기](https://www.codetree.ai/missions?missionId=5)|[[연습]최대로 겹치는 지점](https://www.codetree.ai/missions/5/problems/maximum-overlapped-points)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/chaeyun-sim/codetree-TILs/blob/main/240211/%EC%B5%9C%EB%8C%80%EB%A1%9C%20%EA%B2%B9%EC%B9%98%EB%8A%94%20%EC%A7%80%EC%A0%90/maximum-overlapped-points.js)|
-|[Novice Mid / 시뮬레이션 I / 구간 칠하기](https://www.codetree.ai/missions?missionId=5)|[[연습]왔다 갔던 구역 2](https://www.codetree.ai/missions/5/problems/area-been-to-and-from2)|![보통][medium]|![Failed][failed]|[링크](https://github.com/chaeyun-sim/codetree-TILs/blob/main/240211/%EC%99%94%EB%8B%A4%20%EA%B0%94%EB%8D%98%20%EA%B5%AC%EC%97%AD%202/area-been-to-and-from2.js)|
+|[Novice Mid / 시뮬레이션 I / 구간 칠하기](https://www.codetree.ai/missions?missionId=5)|[[연습]왔다 갔던 구역 2](https://www.codetree.ai/missions/5/problems/area-been-to-and-from2)|![보통][medium]|![Passed][passed]|[링크](https://github.com/chaeyun-sim/codetree-TILs/blob/main/240211/%EC%99%94%EB%8B%A4%20%EA%B0%94%EB%8D%98%20%EA%B5%AC%EC%97%AD%202/area-been-to-and-from2.js)|
 
 
 * 획득 경험치: 해설을 보지 않고 푼 문제에 한해 최초 1회 경험치를 획득하실 수 있습니다.
