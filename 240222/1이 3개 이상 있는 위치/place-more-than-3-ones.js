@@ -1,33 +1,30 @@
-const fs = require('fs');
-const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs')
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
 
-const n = Number(input[0]);
-const arr = input.slice(1, n + 1).map(el => el.split(' ').map(Number));
-const dx = [0, 1, 0, -1];
-const dy = [1, 0, -1, 0];
 
-const isValid = (x, y, n) => x >= 0 && x < n && y >= 0 && y < n;
-let cnt = 0
+const n = Number(input[0])
+const grid = input.slice(1).map(el => el.split(' ').map(Number))
+const dx = [-1, 1, 0, 0];
+const dy = [0, 0, -1, 1];
+let count = 0;
 
 for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
-        let direction = 0;
-        let total = 0
+        let ones = 0;
 
-        while (direction < 4) {
-            const nx = i + dx[cnt];
-            const ny = j + dy[cnt];
+        for (let k = 0; k < 4; k++) {
+            const nx = i + dx[k];
+            const ny = j + dy[k];
 
-            if (isValid(nx, ny, n) && arr[nx][ny] === 1) {
-                total++
+            if (grid[nx] !== undefined && nx >= 0 && nx < n && ny >= 0 && ny < n && grid[nx][ny] === 1) {
+                ones++;
             }
-            direction++;
-        } 
+        }
 
-        if (total >= 3) {
-            cnt++
+        if (ones >= 3) {
+            count++;
         }
     }
 }
 
-console.log(cnt);
+console.log(count);
