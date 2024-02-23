@@ -21,7 +21,7 @@ testCases.forEach((direction, index) => {
     cnt++;
     
     if (x === 0 && y === 0) {
-        target = cnt;
+        target = Math.min(target, cnt);
         return;
     }
 });
