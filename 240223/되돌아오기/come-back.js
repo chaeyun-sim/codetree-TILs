@@ -7,6 +7,7 @@ const dx = [0, 1, 0, -1]
 const dy = [1, 0, -1, 0]
 let x = 0, y = 0;
 let cnt = 0;
+let target = -Infinity;
 
 testCases.forEach(item => {
     const [direction, strDistance] = item;
@@ -31,8 +32,17 @@ testCases.forEach(item => {
         distance--
 
         if (x === 0 && y === 0) {
-            console.log(cnt)
+            if (cnt < target) {
+                target = cnt
+            }
+
             return;
         }
     }
 });
+
+if (target > 0)  {
+    console.log(target)
+} else {
+    console.log(-1)
+}
