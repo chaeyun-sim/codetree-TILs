@@ -6,10 +6,10 @@ const testCases = input.slice(1).map(el => el.split(' '));
 const dx = [0, 1, 0, -1]
 const dy = [1, 0, -1, 0]
 let x = 0, y = 0;
-let cnt = 0;
-let target = -Infinity;
+let target = 0;
+let cnt = 0
 
-testCases.forEach(item => {
+testCases.forEach((item, index) => {
     const [direction, strDistance] = item;
     let distance = Number(strDistance);
     let idx;
@@ -28,20 +28,17 @@ testCases.forEach(item => {
         x += dx[idx];
         y += dy[idx];
 
-        cnt++
         distance--
+        cnt++
 
         if (x === 0 && y === 0) {
-            if (cnt < target) {
-                target = cnt
-            }
-
-            return;
+            target = cnt
+            break;
         }
     }
 });
 
-if (target > 0)  {
+if (target)  {
     console.log(target)
 } else {
     console.log(-1)
