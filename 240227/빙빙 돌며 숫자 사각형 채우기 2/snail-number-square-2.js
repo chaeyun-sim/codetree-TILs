@@ -3,8 +3,8 @@ const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 let [n, m] = input[0].split(" ").map(Number);
 let x = 0, y = 0;
-const dx = [0, 1, 0, -1]
-const dy = [-1, 0, 1, 0];
+const dx = [1, 0, -1, 0]
+const dy = [0, 1, 0, -1];
 let currentDirection = 0;
 const answer = Array(n).fill(null).map(() => Array(m).fill(0));
 answer[x][y] = 1;
@@ -26,4 +26,4 @@ for (let i = 2; i <= n * m; i++) {
     answer[x][y] = i;
 }
 
-answer.forEach(row => console.log(row.join(' ')))
+answer.forEach(row => console.log(row.join(' ')));
