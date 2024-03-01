@@ -2,7 +2,7 @@ const fs = require('fs')
 const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
 
 const binary = input[0]
-let max = Number(binary)
+let max = -Infinity
 
 for (let i = 0; i < binary.length; i++) {
     const left = binary.slice(0, i)
@@ -15,8 +15,4 @@ for (let i = 0; i < binary.length; i++) {
     }
 }
 
-if (binary === '0') {
-    console.log(0)
-} else {
-    console.log(parseInt(max, 2))
-}
+console.log(parseInt(max, 2))
