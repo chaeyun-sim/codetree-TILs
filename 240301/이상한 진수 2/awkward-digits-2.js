@@ -15,4 +15,8 @@ for (let i = 0; i < binary.length; i++) {
     }
 }
 
-console.log(parseInt(max, 2))
+if (binary === '0') {
+    console.log(0)
+} else {
+    console.log(parseInt(max, 2))
+}
