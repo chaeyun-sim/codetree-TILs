@@ -20,4 +20,8 @@ list.forEach(item => {
     max = Math.max(max, sum)
 })
 
-console.log(max)
+if (arr.length === 1) {
+    console.log(arr[0][0] - 1)
+} else {
+    console.log(max)
+}
