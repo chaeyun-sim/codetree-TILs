@@ -2,20 +2,23 @@ const fs = require('fs')
 const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
 
 const [n, k] = input[0].split(' ').map(Number)
-const arr = input.slice(1).map(el => el.split(' ').map(Number)).sort((a, b) => a[1] - b[1])
-let max = -Infinity;
+const d = Array(101).fill(0)
 
-function sum(arr){
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) sum += arr[i]
-    return sum;
+for (let i = 1; i <= n; i++) {
+    const [cnt, idx] = input[i].split(' ').map(Number)
+    d[idx] += cnt
 }
 
-for (let i = k; i < arr[arr.length - 1][1] - k; i++) {
-    const left = arr.filter(el => el[1] <= i && el[1] >= i - k)
-    const right = arr.filter(el => el[1] >= i && el[1] <= i + k)
-    const newArr = left.concat(right)
-    max = Math.max(max, sum(newArr.map(el => el[0])))
+let max = 0
+
+for (let i = 0; i < 100; i++) {
+    let sum = 0
+    for (let j = i - k; j < i + k + 1; j++) {
+        if (0 <= j && j <= 100) {
+            sum += d[j]
+        }
+    }
+    max = Math.max(max, sum)
 }
 
 console.log(max)
