@@ -7,13 +7,19 @@ const b = input[2].split(' ').map(Number)
 let cnt = 0
 
 function checkEqual (a, b) {
-    for (let i = 0; i < a.length; i++) {
-        if (!b.includes(a[i])) {
-            return false
-        }
+    if (a.length !== b.length) return false;
+  
+    const mapA = {};
+    const mapB = {};
+    
+    a.forEach(val => mapA[val] = (mapA[val] || 0) + 1);
+    b.forEach(val => mapB[val] = (mapB[val] || 0) + 1);
+    
+    for (let val in mapA) {
+        if (mapA[val] !== mapB[val]) return false;
     }
-
-    return true
+    
+    return true;
 }
 
 for (let i = m; i <= n; i++) {
