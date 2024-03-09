@@ -5,22 +5,36 @@ const n = Number(input[0])
 const arr = input.slice(1).map(el => el.split(' ').map(Number))
 let max = 0
 
-function checkTime(arr) {
-    const obj = {}
+function checkTime(intervals) {
+  let timePoints = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = arr[i][0]; j <= arr[i][1]; j++) {
-            if (!obj[j]) obj[j] = 1
-        }
+  intervals.forEach(([start, end]) => {
+    timePoints.push({ time: start, type: 'start' });
+    timePoints.push({ time: end, type: 'end' });
+  });
+
+  timePoints.sort((a, b) => a.time - b.time || (a.type === 'end' ? -1 : 1));
+
+  let current = 0;
+  let lastTime = 0;
+  let total = 0;
+
+  timePoints.forEach(point => {
+    if (current > 0) {
+      total += point.time - lastTime;
     }
 
-    return Object.keys(obj).length
+    current = point.type === 'start' ? current + 1 : current - 1
+    lastTime = point.time;
+  });
+
+  return total;
 }
 
 
 for (let i = 0; i < n; i++) {
     const newArr = arr.slice(0, i).concat(arr.slice(i + 1)).sort((a, b) => a[0] - b[0])
-    max = Math.max(max, checkTime(newArr) - 2)
+    max = Math.max(max, checkTime(newArr))
 }
 
 console.log(max)
