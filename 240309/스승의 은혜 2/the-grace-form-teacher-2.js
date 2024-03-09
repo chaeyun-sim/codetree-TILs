@@ -5,20 +5,16 @@ const [n, b] = input[0].split(' ').map(Number)
 const arr = input.slice(1).map(Number)
 let max = 0
 
-function getSum(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        const total = [...arr.slice(0, i), arr[i] / 2, ...arr.slice(i + 1)]
-        const sum = total.reduce((a, b) => a + b)
-        if (sum <= b) {
-            max = Math.max(max, total.length)
-        }
-    }
-}
-
-for (let i = 0; i < n; i++) {
-    for (let j = i + 1; j < n; j++) {
+for (let i = 0; i <= n; i++) {
+    for (let j = i + 1; j <= n; j++) {
         const newArr = arr.slice(i, j)
-        getSum(newArr)
+        for (let k = 0; k < newArr.length; k++) {
+            const list = [...newArr.slice(0, k), newArr[k] / 2, ...newArr.slice(k + 1)]
+            const sum = list.reduce((a,b) => a + b)
+            if (sum <= b) {
+                max = Math.max(list.length, max)
+            }
+        }
     }
 }
 
