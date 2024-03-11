@@ -16,4 +16,4 @@ for (let i = 0; i < n; i++) {
     if (arr[i] === 3) flag = !flag
 }
 
-console.log(cnt < k ? max : -1)
+console.log(cnt <= k ? max : -1)
