@@ -3,18 +3,19 @@ const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
 
 const n = Number(input[0])
 const arr = input[1].split(' ').map(Number).sort((a, b) => a - b)
-let cnt = 0
+const map = new Map();
+let max = 0;
 
-for (let i = 1; i <= n; i++) {
-    let num = i;
-
-    for (let j = 0; j < n; j++) {
-        for (let k = j + 1; k < n; k++) {
-            if (num - arr[j] === arr[k] - num) {
-                cnt++
-            }
-        }
+for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      const k = (arr[j] + arr[i]) / 2.0;
+      
+      if (Number.isInteger(k)) {
+        const item = map.get(k)
+        map.set(k, (item || 0) + 1);
+        max = Math.max(max, item);
+      }
     }
 }
 
-console.log(cnt)
+console.log(max)
