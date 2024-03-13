@@ -5,7 +5,7 @@ const n = Number(input[0])
 const arr = input[1].split(' ').map(Number).sort((a, b) => a - b)
 let cnt = 0
 
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= n; i++) {
     let num = i;
 
     for (let j = 0; j < n; j++) {
