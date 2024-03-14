@@ -12,8 +12,12 @@ for (let i = 0; i < n; i++) {
             const [x2, y2] = arr[j]
             const [x3, y3] = arr[k]
 
-            const sum = Math.abs((x1*y2 + x2*y3 + x3*y1) - (x2*y1 + x3*y2 + x1*y3))
-            max = Math.max(max, sum)
+            if (y1 === y2 || y2 === y3 || y1 === y3 || x1 === x2 || x2 === x3 || x1 === x3) {
+                const sum = Math.abs((x1 * y2 + x2 * y3 + x3 * y1) - (x2 * y1 + x3 * y2 + x1 * y3));
+                max = Math.max(max, sum);
+            }
+
+            
         }
     }
 }
